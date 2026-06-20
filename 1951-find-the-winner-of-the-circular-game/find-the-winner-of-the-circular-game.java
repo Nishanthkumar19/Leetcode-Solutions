@@ -1,9 +1,15 @@
 class Solution {
     public int findTheWinner(int n, int k) {
-        int ans=0;
+        List<Integer>list=new ArrayList<>();
         for(int i=1;i<=n;i++){
-            ans=(ans+k)%i;
+            list.add(i);
+
         }
-        return ans+1;
+        int index=0;
+        while(list.size()>1){
+            index=(index+k-1)%list.size();
+            list.remove(index);
+        }
+        return list.get(0);
     }
 }
