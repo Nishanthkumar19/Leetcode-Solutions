@@ -1,8 +1,9 @@
 class Solution {
     public int hIndex(int[] citations) {
         Arrays.sort(citations);
-        for(int i=0;i<citations.length;i++){
-            int h=citations.length-i;
+        int n=citations.length;
+        for(int i=0;i<n;i++){
+            int h=n-i;
             if(citations[i]>=h){
                 return h;
             }
